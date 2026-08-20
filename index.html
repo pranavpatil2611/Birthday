@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Happy Birthday Vivek 🎉</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(
+                135deg,
+                #ff512f,
+                #dd2476,
+                #7f00ff,
+                #00c6ff
+            );
+            background-size: 400% 400%;
+            animation: backgroundMove 10s ease infinite;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        @keyframes backgroundMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            padding: 50px 30px;
+            max-width: 800px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: cardEntry 1.5s ease;
+        }
+
+        @keyframes cardEntry {
+            from {
+                opacity: 0;
+                transform: scale(0.5) translateY(100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .cake {
+            font-size: 90px;
+            animation: bounce 1.5s infinite;
+            margin-bottom: 15px;
+        }
+
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        h1 {
+            color: white;
+            font-size: clamp(45px, 8vw, 85px);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow:
+                0 0 10px #fff,
+                0 0 20px #ffeb3b,
+                0 0 40px #ff4081;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow:
+                    0 0 10px #fff,
+                    0 0 20px #ff4081;
+            }
+
+            to {
+                text-shadow:
+                    0 0 20px #fff,
+                    0 0 40px #ffeb3b,
+                    0 0 60px #00e5ff;
+            }
+        }
+
+        .name {
+            color: #ffeb3b;
+            font-size: clamp(50px, 10vw, 100px);
+            font-weight: bold;
+            margin: 10px 0 25px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            animation: nameAnimation 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes nameAnimation {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.08);
+            }
+        }
+
+        .message {
+            color: white;
+            font-size: clamp(18px, 2.5vw, 25px);
+            line-height: 1.7;
+            margin: auto;
+            max-width: 650px;
+        }
+
+        .message span {
+            color: #ffeb3b;
+            font-weight: bold;
+        }
+
+        .wish {
+            margin-top: 30px;
+            font-size: 30px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Balloons */
+
+        .balloon {
+            position: absolute;
+            bottom: -150px;
+            width: 70px;
+            height: 90px;
+            border-radius: 50%;
+            animation: floatUp linear infinite;
+            opacity: 0.9;
+        }
+
+        .balloon::before {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 28px;
+            width: 15px;
+            height: 15px;
+            background: inherit;
+            transform: rotate(45deg);
+        }
+
+        .balloon::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.7);
+            left: 35px;
+            top: 90px;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            to {
+                transform: translateY(-120vh) rotate(360deg);
+            }
+        }
+
+        .b1 {
+            left: 5%;
+            background: #ff1744;
+            animation-duration: 10s;
+        }
+
+        .b2 {
+            left: 15%;
+            background: #ffea00;
+            animation-duration: 14s;
+            animation-delay: 2s;
+        }
+
+        .b3 {
+            left: 30%;
+            background: #00e676;
+            animation-duration: 12s;
+            animation-delay: 4s;
+        }
+
+        .b4 {
+            right: 30%;
+            background: #2979ff;
+            animation-duration: 15s;
+            animation-delay: 1s;
+        }
+
+        .b5 {
+            right: 15%;
+            background: #d500f9;
+            animation-duration: 11s;
+            animation-delay: 3s;
+        }
+
+        .b6 {
+            right: 5%;
+            background: #ff6d00;
+            animation-duration: 13s;
+            animation-delay: 5s;
+        }
+
+        /* Confetti */
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: -20px;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(-10vh) rotate(0deg);
+            }
+
+            to {
+                transform: translateY(110vh) rotate(720deg);
+            }
+        }
+
+        .c1 {
+            left: 10%;
+            background: yellow;
+            animation-duration: 5s;
+        }
+
+        .c2 {
+            left: 20%;
+            background: #00e5ff;
+            animation-duration: 7s;
+        }
+
+        .c3 {
+            left: 35%;
+            background: #ff4081;
+            animation-duration: 6s;
+        }
+
+        .c4 {
+            left: 50%;
+            background: #76ff03;
+            animation-duration: 8s;
+        }
+
+        .c5 {
+            left: 65%;
+            background: orange;
+            animation-duration: 5.5s;
+        }
+
+        .c6 {
+            left: 80%;
+            background: white;
+            animation-duration: 7.5s;
+        }
+
+        .c7 {
+            left: 90%;
+            background: #ffea00;
+            animation-duration: 6.5s;
+        }
+
+        .c8 {
+            left: 5%;
+            background: #00e676;
+            animation-duration: 8.5s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Balloons -->
+    <div class="balloon b1"></div>
+    <div class="balloon b2"></div>
+    <div class="balloon b3"></div>
+    <div class="balloon b4"></div>
+    <div class="balloon b5"></div>
+    <div class="balloon b6"></div>
+
+    <!-- Confetti -->
+    <div class="confetti c1"></div>
+    <div class="confetti c2"></div>
+    <div class="confetti c3"></div>
+    <div class="confetti c4"></div>
+    <div class="confetti c5"></div>
+    <div class="confetti c6"></div>
+    <div class="confetti c7"></div>
+    <div class="confetti c8"></div>
+
+    <!-- Birthday Card -->
+    <div class="container">
+
+        <div class="cake">🎂</div>
+
+        <h1>Happy Birthday</h1>
+
+        <div class="name">
+            Vivek! 🎉
+        </div>
+
+        <p class="message">
+            Wishing you a day filled with <span>happiness, laughter,
+            love and unforgettable moments!</span>
+            <br><br>
+            May this new year of your life bring you
+            <span>success, good health, endless joy and all the dreams
+            you wish for.</span>
+            <br><br>
+            Keep smiling, keep shining, and keep being the
+            amazing person you are!
+        </p>
+
+        <div class="wish">
+            🎈 🎊 🎁 🎉 🎂 🥳 🎈
+        </div>
+
+    </div>
+
+</body>
+</html>
